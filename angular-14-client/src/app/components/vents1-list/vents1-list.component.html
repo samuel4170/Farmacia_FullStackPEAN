@@ -1,0 +1,43 @@
+<div class="list row">
+  <div class="col-md-10">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="BUSCAR COMPRA POR MES"
+        [(ngModel)]="description"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          (click)="searchTitle()"
+        >
+          Buscar Compra
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <h4 class="lista">Lista de Compras en Nuestro Sitio</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let venta of vents; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(venta, i)"
+      >
+        {{ venta.producto }}
+      </li>
+    </ul>
+
+    <!-- <button class="boton w-sm-100" (click)="removeAllTutorials()">
+      Eliminar todos los ventas
+    </button> -->
+  </div>
+  <div class="col-md-10">
+    <app-venta1-details
+      [viewMode]="true"
+      [currentTutorial]="currentTutorial"
+    ></app-venta1-details>
+  </div>
+</div>

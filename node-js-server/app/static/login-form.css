@@ -1,0 +1,148 @@
+body {
+  background-color: #303135;
+}
+
+.form_container {
+  max-width: 340px;
+  background: #f4f7f8;
+  margin: 50px auto;
+  padding: 27px 37px;
+  background-color: #24252a;
+  border-radius: 20px;
+  font-family: "Poppins", sans-serif;
+  font-style: italic;
+}
+
+.form_container fieldset {
+  border: none;
+}
+
+.form_container legend {
+  font-size: 17px;
+  margin-bottom: 20px;
+  display: flex;
+  color: #ffff;
+  float: left;
+}
+
+.form_container legend i {
+  color: #f17244;
+  padding-right: 12px;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.form_container p > label {
+  display: block;
+  margin-top: 27px;
+  padding: 12px 12px 0 12px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+}
+
+.form_container input[id="username"],
+.form_container input[id="lastname"],
+.form_container input[type="email"],
+.form_container input[type="password"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  display: block;
+  font-family: inherit;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 94%;
+  margin-bottom: 0px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  outline: none;
+  border-radius: 0px 20px 0px 17px;
+  padding: 10px;
+  background-color: #eccbbf;
+}
+
+.form_container input[id="username"]:focus,
+.form_container input[id="lastname"]:focus,
+.form_container input[type="email"]:focus,
+.form_container input[type="password"]:focus {
+  box-shadow: 0 0 10px #f17244;
+}
+
+::placeholder {
+  color: #3f404380;
+  opacity: 1;
+  font-style: italic;
+}
+
+.error.active {
+  font-weight: 700;
+  font-size: 12px;
+  font-style: italic;
+  color: #cc0000;
+  float: right;
+  padding: 5px 10px 0px 5px;
+}
+
+#log-in-btn {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 37px 12px 30px;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-weight: 800;
+  font-style: italic;
+  cursor: pointer;
+  outline: none;
+  color: #ffff;
+  background-color: #f17244;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px #999;
+  width: 92%;
+  font-family: "Poppins", sans-serif;
+}
+
+#log-in-btn:hover {
+  background-color: #eb4f37;
+}
+
+#log-in-btn:active {
+  box-shadow: 0 3px #999;
+  transform: translateY(2px);
+}
+
+/*autharization error in login */
+.err_auth {
+  text-align: center;
+  font-style: italic;
+  color: #d8000c;
+  position: relative;
+  padding-top: 17px;
+  font-size: medium;
+  font-weight: 770;
+}
+
+.social-links-form {
+  text-align: center;
+  display: inline-block;
+  display: flex;
+  justify-content: space-evenly;
+  width: 290px;
+  margin: 10px auto;
+}
+
+.social-links-form a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #eccbbf;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  padding: 10px;
+}
+
+.social-links-form a:hover {
+  color: #ffff;
+}

@@ -1,0 +1,80 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      
+      <div class="form-group">
+        <label for="nombre">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          required
+          [(ngModel)]="proveedor.nombre"
+          name="nombre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="apellido">Apellidos</label>
+        <input
+          class="form-control"
+          id="apellido"
+          required
+          [(ngModel)]="proveedor.apellido"
+          name="apellido"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Direccion</label>
+        <input
+          class="form-control"
+          id="direccion"
+          required
+          [(ngModel)]="proveedor.direccion"
+          name="direccion"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="nit">nit</label>
+        <input
+          class="form-control"
+          id="nit"
+          required
+          [(ngModel)]="proveedor.nit"
+          name="nit"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="codigo">codigo</label>
+        <input
+          class="form-control"
+          id="codigo"
+          required
+          [(ngModel)]="proveedor.codigo"
+          name="codigo"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="pais">pais</label>
+        <input
+          class="form-control"
+          id="pais"
+          required
+          [(ngModel)]="proveedor.pais"
+          name="pais"
+        />
+      </div>
+
+      <button (click)="saveTutorial()" class="btn btn-success">Agregar proveedor</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Registro Exitoso!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Agregar</button>
+    </div>
+  </div>
+</div>

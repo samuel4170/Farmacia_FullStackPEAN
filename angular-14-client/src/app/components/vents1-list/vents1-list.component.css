@@ -1,0 +1,105 @@
+:root{  /*con este root vmaos a definir los colorar para luego solo llamarlos ademas aca podemos llamar a front-zise */
+  --blanco: #ffffff;
+  --oscuro: #212121;
+  --primario: #ffc107;
+  --secunario: #0097a7;
+  --gris: #757575;
+  --grisclaro: #DFE9F3;
+}
+/* GLOBALES */
+html{
+  font-size: 62.5%;
+  box-sizing: border-box; /*ademas estp evita que el tamaño varie o sea pequeño o grande*//*esto es para el box model del la pagina*/
+  scroll-snap-type: y mandatory;
+
+}
+
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
+  justify-content: center;
+}
+
+.lista span{
+  font-size: 2rem;
+}
+
+.boton{
+    background-color: #757575; /*ponerle fondo al boton*/
+    color: #ffffff; /*el texto del boton en blanco*/
+    padding: 0.5rem 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;  /*de minisculas a mayusculas*/
+    font-weight: 600px; /*nivel del negrita*/
+    border-radius: .5rem; /*redondear los bordes del boton*/
+    width: 50%;
+    text-align: center;
+    border: none;
+}
+
+.boton{
+  background-color: #ffc107;
+  color: #212121
+}
+
+
+@media (min-width: 768px) {
+  .boton{
+     width: auto;
+  }
+}
+
+.boton.hover{
+  cursor: pointer;  /*al pulsar el boton con label aparezca una manito*/
+}
+
+@media (min-width: 768px) {
+  .list row{  
+      flex-direction: row;
+      justify-content: space-between;
+      
+  }
+}
+
+
+.btn-sm btn-danger{
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .m-3 btn btn-sm btn-danger{ 
+      flex-direction: row;
+      justify-content: space-between;
+  }
+}
+
+
+
+.col-md-8{  /*esto es para hacer un contenedor, es el fondo blanco donde estan los 3 iconos*/
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+  box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+  background-color: #DFE9F3;
+  padding: 2rem; /*para dar espacion entre la img y el texto MIS SERVICIOS*/
+  border-radius: 1rem; /*hacer que el fondo se hagan bordes*/
+}
+
+.col-md-10{  /*esto es para hacer un contenedor, es el fondo blanco donde estan los 3 iconos*/
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+  box-shadow: 0px 5px 15px 0px rgba(112,112,112,0.54);
+  background-color: #DFE9F3;
+  padding: 2rem; /*para dar espacion entre la img y el texto MIS SERVICIOS*/
+  border-radius: 1rem; /*hacer que el fondo se hagan bordes*/
+}
+
+.w-sm-100{
+  width: 100%;    
+}
+
+@media (min-width: 768px) {
+   .w-sm-100{
+      width: auto;
+   }
+}

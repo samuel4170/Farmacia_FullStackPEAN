@@ -1,0 +1,92 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      
+      <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          required
+          [(ngModel)]="tutorial.nombre"
+          name="nombre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="apellido">Apellidos</label>
+        <input
+          class="form-control"
+          id="apellido"
+          required
+          [(ngModel)]="tutorial.apellido"
+          name="apellido"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Direccion</label>
+        <input
+          class="form-control"
+          id="direccion"
+          required
+          [(ngModel)]="tutorial.direccion"
+          name="direccion"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Telefono</label>
+        <input
+          class="form-control"
+          id="telefono"
+          required
+          [(ngModel)]="tutorial.telefono"
+          name="telefono"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="puesto">Puesto</label>
+        <input
+          class="form-control"
+          id="puesto"
+          required
+          [(ngModel)]="tutorial.puesto"
+          name="puesto"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="salario">Salario</label>
+        <input
+          class="form-control"
+          id="salario"
+          required
+          [(ngModel)]="tutorial.salario"
+          name="salario"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label for="nit">Nit</label>
+        <input
+          class="form-control"
+          id="nit"
+          required
+          [(ngModel)]="tutorial.nit"
+          name="nit"
+        />
+      </div>
+
+      <button (click)="saveTutorial()" class="btn btn-success">Agregar Cliente</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Registro Exitoso!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Agregar</button>
+    </div>
+  </div>
+</div>

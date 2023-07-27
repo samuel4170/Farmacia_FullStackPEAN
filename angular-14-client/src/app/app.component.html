@@ -1,0 +1,53 @@
+<!-- <header class="header">   
+  <a href="app.component.html">
+      <img class="header__logo" src="https://i.pinimg.com/200x/84/0b/79/840b79d9d6fcb98d1ef84b0d1c5f1040.jpg" alt="Logotipo">
+  </a>
+</header> -->
+<header class="header">  
+  <video id="myVideo" autoplay="" loop="" playsinline="" muted="" style="width: 65%;">
+    <source src="https://farmaciasgaleno.com.gt/Image/Video/Home-Video.mp4" type="video/mp4">
+</video>
+</header>
+
+
+<div class="nav-bg">
+  <nav class="navegacion-principal contenedor">
+    <a href="farmacia">FARMACIA</a>
+    <a routerLink="admin">ADMINISTRADOR</a>
+    </nav>
+  </div>
+
+<!-- 
+<div class="nav-bg">
+  <nav class="navegacion-principal contenedor">
+    <a routerLink="addcliente">Agregar Clientes</a>
+    <a routerLink="addproducto">Agregar Producto</a>
+    <a routerLink="addempleado">Agregar Empleados</a>
+    <a routerLink="addproveedor">Agregar Proveedores</a>
+    <a routerLink="addventa">Agregar venta</a>
+    <a href="#">Ayuda</a>
+  </nav>
+</div> -->
+
+
+<section class="hero">
+  <div class="contenido-hero">
+          <h2>Desarrollo Web
+          </h2>
+
+      <div class="ubicacion">
+  <!--link para los iconos https://tablericons.com/ -->
+              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="68" height="68" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff4500" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                  <circle cx="12" cy="11" r="3" />
+                  <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" />
+              </svg>
+      <p> Chilasco, Salamá B.V </p>
+      </div>
+  </div>
+
+  </section>
+
+<div class="container mt-3">
+  <router-outlet></router-outlet>
+</div>

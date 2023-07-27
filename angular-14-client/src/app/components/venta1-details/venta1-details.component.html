@@ -1,0 +1,174 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentTutorial.id">
+    <h4>Detalle de la Factura</h4>
+    <div>
+      <label><strong>Nombre Completo:</strong></label> 
+      {{ currentTutorial.nombre }}
+    </div>
+    <div>
+      <label><strong>Descripcion Del Producto:</strong></label>
+      {{ currentTutorial.producto }}
+    </div>
+    <div>
+      <label><strong>Cantidad:</strong></label>
+      {{ currentTutorial.cantidad }}
+    </div>
+    <div>
+      <label><strong>Precio:</strong></label>
+      {{ currentTutorial.precio }}
+    </div>
+    <div>
+      <label><strong>Total:</strong></label>
+      {{ currentTutorial.total }}
+    </div>
+    <div>
+      <label><strong>Fecha:</strong></label>
+      {{ currentTutorial.fecha  }}
+    </div>
+    <div>
+      <label><strong>Nit:</strong></label>
+      {{ currentTutorial.nit }}
+    </div>
+    <div class="status">
+      <label><strong>Estado de Orden:</strong></label>
+      {{ currentTutorial.published ? "Pendiente" : "Completado" }}
+    </div>
+
+    <div class="alinear-derecha flex">
+    <!-- <a
+      class="boton w-sm-100"
+      routerLink="/vents/{{ currentTutorial.id }}"
+    >
+      Editar
+    </a> -->
+    </div>
+  </div>
+  <div *ngIf="!currentTutorial">
+    <br />
+    <p>Click para registrar</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentTutorial.id" class="edit-form">
+    <h4>Venta</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="currentTutorial.nombre"
+          name="nombre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="producto">producto Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="producto"
+          [(ngModel)]="currentTutorial.producto"
+          name="producto"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="cantidad">cantidad</label>
+        <input
+          type="text"
+          class="form-control"
+          id="cantidad"
+          [(ngModel)]="currentTutorial.cantidad"
+          name="cantidad"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="precio">precio</label>
+        <input
+          type="text"
+          class="form-control"
+          id="precio"
+          [(ngModel)]="currentTutorial.precio"
+          name="precio"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="total">total</label>
+        <input
+          type="text"
+          class="form-control"
+          id="total"
+          [(ngModel)]="currentTutorial.total"
+          name="total"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fecha">fecha</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fecha"
+          [(ngModel)]="currentTutorial.fecha"
+          name="fecha"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nit">nit</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nit"
+          [(ngModel)]="currentTutorial.nit"
+          name="nit"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label><strong>Estado de Orden:</strong></label>
+        {{ currentTutorial.published ? "Completado" : "Pendiente" }}
+      </div>
+    </form>
+
+    <!-- <button
+      class="boton"
+      *ngIf="currentTutorial.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentTutorial.published"
+      class="boton"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button> -->
+
+    <button class="boton" (click)="deleteTutorial()">
+      Eliminar
+    </button>
+
+    <button
+      type="submit"
+      class="boton"
+      (click)="updateTutorial()"
+    >
+      Comprar
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  
+  <div *ngIf="!currentTutorial.id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</ng-template>

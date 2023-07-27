@@ -1,0 +1,123 @@
+:root{  /*con este root vmaos a definir los colorar para luego solo llamarlos ademas aca podemos llamar a front-zise */
+    --blanco: #ffffff;
+    --oscuro: #212121;
+    --primario: #ffc107;
+    --secunario: #0097a7;
+    --gris: #757575;
+    --grisclaro: #DFE9F3;
+}
+/* GLOBALES */
+html{
+    font-size: 62.5%;
+    box-sizing: border-box; /*ademas estp evita que el tamaño varie o sea pequeño o grande*//*esto es para el box model del la pagina*/
+    scroll-snap-type: y mandatory;
+
+}
+
+/* TIPOGRAFIA */
+h1{
+    font-size: 2rem; /*damos tamaños en rem*/
+}
+
+h2{
+    font-size: 1.5rem; /*damos tamaños en rem*/
+}
+
+h3{
+    font-size: 1.8rem; /*damos tamaños en rem*/
+}
+
+h1,h2,h3{
+    text-align: center;
+}
+
+/* TITULO */
+.titulo span{ /*somos mas especificos con titulo span*/
+    font-size: 1.5rem;
+}
+
+
+.nav-bg{
+    background-color: #0097a7;
+}
+
+.contenedor{
+    max-width: 120rem; /*es lo de menu principal, el sombreado*/
+    margin: 1rem auto;  /*la posicion donde queremos colocar el menu de principal*/
+}
+.navegacion-principal{  /*esas secciones hara como pausas para llegar a la seguiente seccion*/
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.navegacion-principal{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+.navegacion-principal a{
+    display: block;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem; /*el tamaño de la letra*/
+    font-weight: 700;
+    padding: 1rem;
+}
+
+.navegacion-principal a:hover{
+    background-color: #212121;
+    color: #ffc107;
+}
+
+.hero{ /*vamos a colocalr la imagen como marca de agua*/
+    background-image: url(../app/img/hero.jpg);  /*llamamos a la imagen*/
+    background-repeat: no-repeat;  /*es pára que la imagen no se repita si es en un pc*/
+    background-size: cover;  /*tamaño de la imagen*/
+    height: 100px;
+    position: relative; /*para la imagen */
+    margin-bottom: 0.2rem;  /*poner un espacio entre la iamgen y el fondo blanco de los iconos*/
+}
+
+.contenido-hero{
+    position: absolute;
+    background-color: rgba(0,0,0,.7);   
+    width: 100%;
+    height: 100%;
+    /*codigo para alinear vertical u horizontalmente    */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /*centrar el titulo*/
+    justify-content: center;
+
+}   
+
+
+
+.ubicacion{   /*centra el texto del lado de icono ubicacion*/
+    display: flex;
+    align-items: flex-end;
+}
+
+.contenido-hero h2,
+.contenido-hero p{
+    color: #ffffff
+}
+
+
+.header__logo{
+    margin: 3rem 0;
+}
+
+.header{
+    background-color: #52716E;  /*sombreado a la parte de atras de la imagen */
+    display:  flex;
+    justify-content: center; /*es para centrar*/
+}

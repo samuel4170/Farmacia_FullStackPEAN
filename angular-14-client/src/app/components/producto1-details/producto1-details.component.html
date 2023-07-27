@@ -1,0 +1,212 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentTutorial.id">
+    <h4>Detalle de Producto</h4>
+    <div>
+      <label><strong>Nombre Completo:</strong></label> 
+      {{ currentTutorial.nombre }}
+    </div>
+    <div>
+      <label><strong>Precio Unitario:</strong></label>
+      {{ currentTutorial.precioU }}
+    </div>
+    <div>
+      <label><strong>Precio por Docena:</strong></label>
+      {{ currentTutorial.precioD }}
+    </div>
+    <div>
+      <label><strong>Descripcion del Producto:</strong></label>
+      {{ currentTutorial.descripcion }}
+    </div>
+    <div class="alinear-derecha flex">
+    <a
+      class="boton w-sm-100"
+      routerLink="/vents/{{ currentTutorial.id }}"
+    >
+      Comprar Producto
+      <div *ngIf="!currentTutorial">
+        <br />
+        <p>Click para registrar</p>
+      </div>
+    </a>
+    </div>
+  </div>
+  <div *ngIf="!currentTutorial">
+    <br />
+    <p>Click para registrar</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentTutorial.id" class="edit-form" >
+    <h4>Producto</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="currentTutorial.nombre"  
+          name="nombre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="precioU">precioU Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="precioU"
+          [(ngModel)]="currentTutorial.precioU"
+          name="precioU"
+        />
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="nit">nit </label>
+        <input
+          class="form-control"
+          id="nit"
+          required
+          [(ngModel)]="venta.nit"
+          name="nit"  
+        />
+      </div> -->
+
+      <div class="form-group">
+        <label for="precioU">PrecioU</label>
+        <input
+          type="text"
+          class="form-control"
+          id="precioU"
+          [(ngModel)]="currentTutorial.precioU"
+          name="precioU"
+        />
+      </div>
+      
+      <div class="form-group">
+        <label for="descripcion">Descripcion</label>
+        <input
+          type="text"
+          class="form-control"
+          id="descripcion"
+          [(ngModel)]="currentTutorial.descripcion"
+          name="descripcion"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+    <button class="boton" (click)="deleteTutorial()">
+      Eliminar
+    </button>
+   
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTutorial.id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+
+ 
+
+<!--   
+  <div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        
+        <div class="form-group">
+          <label for="nombre">Nombres</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+            [(ngModel)]="venta.nombre"
+            name="nombre"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="producto">producto</label>
+          <input
+            class="form-control"
+            id="producto"
+            required
+            [(ngModel)]="venta.producto"
+            name="producto"
+          />
+        </div>
+        
+        <div class="form-group">
+          <label for="cantidad">cantidad</label>
+          <input
+            class="form-control"
+            id="cantidad"
+            required
+            [(ngModel)]="venta.cantidad"
+            name="cantidad"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="precio">precio</label>
+          <input
+            class="form-control"
+            id="precio"
+            required
+            [(ngModel)]="venta.precio"
+            name="precio"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="total">total</label>
+          <input
+            class="form-control"
+            id="total"
+            required
+            [(ngModel)]="venta.total"
+            name="total"
+          />
+        </div>
+  
+        
+        <div class="form-group">
+          <label for="fecha">fecha</label>
+          <input
+            class="form-control"
+            id="fecha"
+            required
+            [(ngModel)]="venta.fecha"
+            name="fecha"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="nit">nit </label>
+          <input
+            class="form-control"
+            id="nit"
+            required
+            [(ngModel)]="venta.nit"
+            name="nit"
+          />
+        </div>
+  
+        <button (click)="saveTutorial()" class="btn btn-success">Agregar venta</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Registro Exitoso!</h4>
+        <button class="btn btn-success" (click)="newTutorial()">Agregar</button>
+      </div>
+    </div>
+  </div>
+   -->

@@ -1,0 +1,196 @@
+#signup_form {
+  height: 440px;
+}
+
+.close {
+  background: white;
+  color: black;
+  line-height: 25px;
+  position: absolute;
+  left: 890px;
+  text-align: center;
+  top: 224px;
+  width: 35px;
+  text-decoration: none;
+  font-weight: bold;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+  -moz-box-shadow: 1px 1px 3px #000;
+  -webkit-box-shadow: 1px 1px 3px #000;
+  box-shadow: none;
+  border: none;
+}
+
+.close:hover {
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+.modal-right #modal-img-right {
+  position: absolute;
+  top: 0%;
+  right: 60%;
+  transform: scale(0.34, 0.39);
+}
+
+.modal-left #modal-img-left {
+  position: absolute;
+  top: 40%;
+  left: 52%;
+  transform: scale(0.35, 0.37);
+}
+
+.isValid label {
+  position: relative;
+  display: inline-block;
+  font-size: 15px;
+  text-align: center;
+}
+
+.isValid input {
+  border: 2px solid #f0f0f0;
+  background-color: rgb(234, 206, 211);
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px;
+  width: 100%;
+}
+
+.isValid span {
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 550;
+  color: white;
+  background-color: #900;
+  border-radius: 0px 0 23px 2px;
+  box-sizing: border-box;
+  float: right;
+  padding: 5px;
+  margin: 0;
+  visibility: hidden;
+}
+
+.isValid.error span {
+  visibility: visible;
+  border-color: #900;
+}
+
+span.userTypeErr {
+  position: relative;
+  font-style: italic;
+  color: #d8000c;
+  font-size: 14px;
+  font-weight: bolder;
+  top: 5px;
+  left: 27px;
+  text-align: center;
+}
+
+.register-btn {
+  position: relative;
+  display: inline-block;
+  background-color: #332f33;
+  border-radius: 10px;
+  color: #ffff;
+  font-size: 20px;
+  padding: 5px;
+  width: 270px;
+  line-height: 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.register-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+  color: #ffff;
+}
+
+.register-btn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.register-btn:hover {
+  background-color: #eb4f37;
+}
+
+.register-btn:hover span {
+  padding-right: 25px;
+}
+
+.register-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* user types */
+.switch {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 310px;
+  height: 38px;
+  border: 0.7px solid #eccbbf;
+  background: #303135;
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  font-weight: bolder;
+  font-size: 17px;
+  font-family: "Poppins", sans-serif;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.switch label {
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.2);
+  width: 60px;
+  line-height: 37px;
+  transition: all 0.2s ease;
+}
+
+label[for="customer"] {
+  position: absolute;
+  left: 10px;
+  height: 20px;
+}
+
+label[for="admin"] {
+  position: absolute;
+  right: 70px;
+}
+
+#admin:checked ~ .switch {
+  background: #eb4f37;
+  box-shadow: 0 0 12px #eb4f37;
+  border: none;
+}
+
+#customer:checked ~ .switch {
+  background: #32a832d5;
+  box-shadow: 0 0 12px #32a832d5;
+  border: none;
+}
+
+#customer:checked ~ .switch label[for="customer"] {
+  color: #fff;
+}
+
+#admin:checked ~ .switch label[for="admin"] {
+  color: #fff;
+}

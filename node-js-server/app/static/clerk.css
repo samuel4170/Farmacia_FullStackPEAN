@@ -1,0 +1,46 @@
+.tableContainer {
+  margin: 20px 50px;
+}
+
+.tabledata form,
+td,
+input {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.button:hover a {
+  color: #f17244;
+}
+
+article {
+  background: linear-gradient(to right, rgb(236, 69, 9), hsl(24, 40%, 67%));
+  background-clip: borde;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #f17244;
+  text-align: center;
+}
+
+h1 {
+  font-size: 10vmin;
+  line-height: 1.1;
+}
+
+.text-center {
+  color: #f17244;
+  font-size: 200%;
+}
+
+h1,
+p,
+body {
+  margin: 0;
+}
+
+p {
+  font-family: "Dank Mono", ui-monospace, monospace;
+}
+
+#photo {
+  color: #f17244;
+}

@@ -1,0 +1,145 @@
+<div *ngIf="viewMode; else editable">
+  <div *ngIf="currentTutorial.id">
+    <h4>Detalle de Cliente</h4>
+    <div>
+      <label><strong>Nombre Completo:</strong></label> 
+      {{ currentTutorial.nombre }}
+    </div>
+    <div>
+      <label><strong>Apellido completo:</strong></label>
+      {{ currentTutorial.apellido }}
+    </div>
+    <div>
+      <label><strong>Direccion:</strong></label>
+      {{ currentTutorial.direccion }}
+    </div>
+    <div>
+      <label><strong>Telefono:</strong></label>
+      {{ currentTutorial.telefono }}
+    </div>
+    <div>
+      <label><strong>Nit:</strong></label>
+      {{ currentTutorial.telefono }}
+    </div>
+    <div class="status">
+      <label><strong>Status:</strong></label>
+      {{ currentTutorial.published ? "Activo" : "Inactivo" }}
+    </div>
+
+    <div class="alinear-derecha flex">
+    <a
+      class="boton w-sm-100"
+      routerLink="/clients/{{ currentTutorial.id }}"
+    >
+      Editar
+    </a>
+    </div>
+
+  </div>
+
+  <div *ngIf="!currentTutorial">
+    <br />
+    <p>Click para registrar</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentTutorial.id" class="edit-form">
+    <h4>Cliente</h4>
+    <form>
+
+      <div class="form-group">
+        <label for="nombre">Nombre Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="currentTutorial.nombre"
+          name="nombre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="apellido">Apellido Completo</label>
+        <input
+          type="text"
+          class="form-control"
+          id="apellido"
+          [(ngModel)]="currentTutorial.apellido"
+          name="apellido"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">Direccion</label>
+        <input
+          type="text"
+          class="form-control"
+          id="direccion"
+          [(ngModel)]="currentTutorial.direccion"
+          name="direccion"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">Telefono</label>
+        <input
+          type="text"
+          class="form-control"
+          id="telefono"
+          [(ngModel)]="currentTutorial.telefono"
+          name="telefono"
+        />
+      </div>
+      <div class="form-group">
+        <label for="nit">Nit</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nit"
+          [(ngModel)]="currentTutorial.nit"
+          name="nit"
+        />
+      </div>
+
+
+      <div class="form-group">
+        <label><strong>Status:</strong></label>
+        {{ currentTutorial.published ? "Published" : "Pending" }}
+      </div>
+    </form>
+
+    <button
+      class="boton"
+      *ngIf="currentTutorial.published"
+      (click)="updatePublished(false)"
+    >
+      UnPublish
+    </button>
+    <button
+      *ngIf="!currentTutorial.published"
+      class="boton"
+      (click)="updatePublished(true)"
+    >
+      Publish
+    </button>
+
+    <button class="boton" (click)="deleteTutorial()">
+      Eliminar
+    </button>
+
+    <button
+      type="submit"
+      class="boton"
+      (click)="updateTutorial()"
+    >
+      Actualizar
+    </button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div *ngIf="!currentTutorial.id">
+    <br />
+    <p>Cannot access this Tutorial...</p>
+  </div>
+</ng-template>

@@ -1,0 +1,287 @@
+:root{
+  --fuenteHeading: 'PT Sans', sans-serif;
+  --fuenteParrafos: 'Open Sans', sans-serif;
+
+  --primario: #784D3C;
+  --gris:#e1e1e1;
+  --blanco: #FFFFFF;
+  --negro: #000000;
+
+  --fuentePrincipal: font-family: 'Krub', sans-serif;
+  font-family: 'Staatliches', cursive;
+}
+
+html{
+  box-sizing: border-box; /*para que que no afecte bordes */
+  font-size: 62.5%; /*para que un 1rem sean 10px para no hacer cifras grandes*/
+}
+
+*, *:before, *:after{
+  box-sizing: inherit;
+}
+
+body{
+  font-family: var(--fuenteParrafos);
+  font-size: 1.6rem;  /*tamaño men*/
+  line-height: 2; /*interlineado*/
+} 
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  color: var(--secundario);
+  font-family: var(--fuentePrincipal);
+}
+/* VARIABLES GLOBALES*/
+
+.contenedor{
+  max-width: 120rem;
+  width: 90%;
+  margin: 0 auto; /*centrar contenido horizontalmente*/
+}
+
+a{  /*enlaces*/
+  text-decoration: none;  /*eliminamos los bordes */
+}
+
+
+h1{
+  font-size: 4.8rem;
+}
+
+h2{
+  font-size: 4rem;
+}
+
+h3{
+  font-size: 3.2rem;
+}
+
+h4{
+  font-size: 2.8rem;
+}
+
+h4{
+  font-size: 2rem;
+}
+
+h4{
+  font-size: 1.5rem;}
+/* IMAGENES */
+
+img{
+  max-width: 100%;  /*que ocuape todo el lugar o espacio disponible*/
+}
+
+/* UTILIDADES */
+.no-margin{
+  margin: 0;
+}
+
+.no-padding{
+  padding: 0;
+}
+
+.centrar-texto{
+  text-align: center;
+}
+
+/* header */
+
+.header{
+  background-image: url(./img/lo.jpg);  /*agregar imagen*/
+  height: 24rem;
+  background-size: cover; /*´para que la imagen tome todo el espacio disponible de los 60rem*/
+  background-repeat: no-repeat;
+  background-position: center center; /*al correr la imgane o que se haga mas pequeño se muestre del centro*/
+}
+
+.header__texto{
+  text-align: center;
+  color: var(--blanco);
+  margin-top: 5rem;
+}
+
+@media (min-width: 768px) {
+   .barra{
+      display: flex;
+      justify-content: space-between; /*para alinear horizontalmente osea poner uno de un lado y el otro*/
+      align-items: center;
+   }
+}
+
+.logo{
+  color: var(--blanco);
+}
+
+.logo__nombre{
+  font-weight: 400;
+  
+}
+
+.logo__bold{
+  font-weight: 700;
+}
+
+@media (min-width: 768PX) {
+   .header__texto{
+      margin-top: 15rem;
+   }
+}
+@media (min-width: 768px) {
+   .navegacion{
+      display: flex;
+      gap: 2rem; /*espacio a la cosa de navegacion*/
+   }
+}
+
+.navegacion__enlace{
+  display: block; /*es para que los elementos se listen cuando esten en dispositivo pequeño*/
+  text-align: center; /*centrar la lista*/ 
+  font-size: 1.3rem; /*espacio*/
+  color: #000000;
+  background-color: #5d817e;
+  background-size: cover; /*´para que la imagen tome todo el espacio disponible de los 60rem*/
+  background-repeat: no-repeat;
+  background-position: center center; /*al correr la imgane o que se haga mas pequeño se muestre del centro*/
+}
+
+@media (min-width: 768px) {
+   .contenido-principal{
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      column-gap: 4rem;
+   }
+}
+
+.entrada{
+  border-bottom: 1rem solid var(--gris);
+  margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{
+  border: none;
+  margin-bottom: 0;
+}
+
+.boton{
+  display: block;
+  font-family: var(--fuenteHeading);
+  color: var(--blanco);
+  text-align: center; /*centrar el contenido en el fondo del boton*/
+  padding: 1rem 3rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* como los botones al ser pc se extienden mucho vamos a hacer un mq que sea de botones pequeños */
+@media (min-width: 768px) {
+  .boton{
+      display: inline-block;
+  }
+   
+}
+
+
+.boton1{
+  display: block;
+  font-family: var(--fuenteHeading);
+  color: #ffffff;
+  text-align: center; /*centrar el contenido en el fondo del boton*/
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+/* como los botones al ser pc se extienden mucho vamos a hacer un mq que sea de botones pequeños */
+@media (min-width: 768px) {
+  .boton1{
+      display: inline-block;
+  }
+   
+}
+.boton--primario{
+  background-color: var(--negro);  /*margen a los botones*/
+
+}
+
+.boton--secundario{
+  background-color: #0097a7;
+}
+
+
+.boton--primario{
+  background-color: #ffc107;
+}
+.cursor{
+  list-style: none;
+}
+
+.widget-curso{
+      border-bottom: 1px solid var(--gris);
+      margin-bottom: 2rem;
+}
+
+.widget-curso:last-of-type{ /*last of tipe toma el ultimo articulo y le elimina la linea*/
+  border: none;
+  margin-bottom: 0%;
+}
+
+.widget-curso__label{
+  font-family: var(--fuenteHeading);
+  font-weight: bold;
+}
+
+.widget-curso__info{
+  font-weight: normal;
+}
+
+
+.widget-curso__label,
+.widget-curso__info{
+  font-size: 2rem;
+}
+.nav-bg{
+  background-color: #0097a7;
+}
+.contenedor{
+  max-width: 120rem; /*es lo de menu principal, el sombreado*/
+  margin: 1rem auto;  /*la posicion donde queremos colocar el menu de principal*/
+}
+
+.navegacion-principal{  /*esas secciones hara como pausas para llegar a la seguiente seccion*/
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+
+.navegacion-principal{
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .navegacion-principal{
+      flex-direction: row;
+      justify-content: center;
+  }
+}
+
+.navegacion-principal a{
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem; /*el tamaño de la letra*/
+  font-weight: 700;
+  padding: 1rem;
+  font-weight:  bolder;
+}
+
+.navegacion-principal a:hover{
+  font-weight:  bolder;
+  background-color: #212121;
+  color: #ffc107;
+}

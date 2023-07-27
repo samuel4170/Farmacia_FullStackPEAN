@@ -1,0 +1,48 @@
+
+<div class="list row">
+
+  <div class="col-md-11">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Buscar por Nombre"
+        [(ngModel)]="description"
+      />
+      <div class="input-group-append"> 
+        <button
+          class="btn btn-outline-secondary"
+          (click)="searchTitle()"
+        >
+          Buscar Producto
+        </button>
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="col-md-10">
+    <h4 class="lista">Productos Disponibles</h4>  
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let venta of products; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTutorial(venta, i)"
+      >
+        {{ venta.nombre }}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-md-10">
+    <app-producto1-details
+      [viewMode]="true"
+      [currentTutorial]="currentTutorial"
+    ></app-producto1-details>
+  </div>
+<div>
+  <img class="card-img-top img-thumbnail" src="https://farmaciasgaleno.com.gt/Image/Home/Ofertas/HF11.JPG" alt="Card image cap" 
+  style="border-radius:20px" onclick="ZoomImagen(this);" onerror="this.onerror=null;this.src='/Image/ProductoNA.JPG';">
+
+</div>

@@ -1,0 +1,69 @@
+<div>
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      
+      <div class="form-group">
+        <label for="nombre">Nombres</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          required
+          [(ngModel)]="producto.nombre"
+          name="nombre"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="precioU">Precio Unitario</label>
+        <input
+          class="form-control"
+          id="precioU"
+          required
+          [(ngModel)]="producto.precioU"
+          name="precioU"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="precioD">Precio por Docena</label>
+        <input
+          class="form-control"
+          id="precioD"
+          required
+          [(ngModel)]="producto.precioD"
+          name="precioD"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="stock">stock</label>
+        <input
+          class="form-control"
+          id="stock"
+          required
+          [(ngModel)]="producto.stock"
+          name="stock"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="descripcion">Descripcion del Producto</label>
+        <input
+          class="form-control"
+          id="descripcion"
+          required
+          [(ngModel)]="producto.descripcion"
+          name="descripcion"
+        />
+      </div>
+
+      <button (click)="saveTutorial()" class="btn btn-success">Agregar producto</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Registro Exitoso!</h4>
+      <button class="btn btn-success" (click)="newTutorial()">Agregar</button>
+    </div>
+  </div>
+</div>
